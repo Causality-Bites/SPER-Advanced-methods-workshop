@@ -1,6 +1,5 @@
 # Authors: 
 # Lan Wen, UWaterloo, Canada
-# Soren Harnois-Leblanc, HMS, Boston
 
 # Version: 2026/04/22
 
