@@ -10,6 +10,7 @@
   ### this dataset contains (L1,L2,A,C,Y), where L1 is binary, L2~Unif[0,1]
   ### A has three levels (0,1,2,3), Y is binary outcome
   ### n=10000
+  n=dim(df)[1]
   
   ## Here, we will use iterated logistic regression models to model multinomial exposure levels A=0,1,2,3. 
   ## We redefine exposure levels to use in logistic regression models:
