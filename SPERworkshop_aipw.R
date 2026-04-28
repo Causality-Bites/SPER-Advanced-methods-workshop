@@ -102,7 +102,7 @@ dat$ypredintervene1 = predict(yfit, newdata = ydat1, type="response") ## predict
 dat$ypredintervene2 = predict(yfit, newdata = ydat2, type="response") ## predicted E(Y|A=2,L,C=0) 
   
 #under intervention g
-ydat = dat; ydat$A=ifelse(ydat$A==0, ydat$A-1, ydat$A); ## set A values according to intervention in testing data for A^g
+ydat = dat; ydat$A=ifelse(ydat$A>0, ydat$A-1, ydat$A); ## set A values according to intervention in testing data for A^g
 dat$ypredinterveneg = predict(yfit, newdata = ydat, type="response") ## predicted E(Y|A^g,L,C=0) 
   
   
