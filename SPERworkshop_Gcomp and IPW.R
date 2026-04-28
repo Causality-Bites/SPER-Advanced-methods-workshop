@@ -42,8 +42,7 @@ dat$Y_homa = rgamma(10000, shape = 3, scale=2)
 dat = dat %>% mutate(Y_homa=if_else(C==1, NA, Y_homa))
 hist(dat$Y_homa)
 summary(dat$Y_homa)
-#Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-# 0.1232  3.4527  5.3564  5.9856  7.8031 25.3812    1694 
+
 
 ##############################
 ### Parametric g-computation
