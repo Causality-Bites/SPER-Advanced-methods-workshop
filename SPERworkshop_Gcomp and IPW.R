@@ -49,13 +49,13 @@ summary(dat$Y_homa)
 ### Parametric g-computation
 ##############################
 
-### 1. Fit a parametric model for E[Y |C = 0, A, W ], as much as flexible as possible, among c=0, save as object
+### 1. Fit a parametric model for E[Y |C = 0, A, L ], as much as flexible as possible, among c=0, save as object
 
 mod_homa = lm(Y_homa ~ A*L, data=dat)
 summary(mod_homa)
 nobs(mod_homa) 
 
-### 2. Make a copy of original dataset with 944 rows for each intervention of interest. Drop values of Y, and replace the values of A_i with the value it would taked under intervention (A^g+_i)
+### 2. Make a copy of original dataset with 10000 rows for each intervention of interest. Drop values of Y, and replace the values of A_i with the value it would take under intervention (A^g+_i)
 
 ###Copy 1: the pragmatic intervention we've conceived.
 newdatg = dplyr::select(dat,-Y_homa)
