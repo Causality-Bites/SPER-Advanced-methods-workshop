@@ -58,7 +58,7 @@ nobs(mod_homa)
 
 ###Copy 1: the pragmatic intervention we've conceived.
 newdatg = dplyr::select(dat,-Y_homa)
-newdatg = newdatg %>% mutate(A=if_else(A==2, 1, 0)) 
+newdatg = newdatg %>% mutate(A=if_else(A>0, A-1, A))
 #check if g+ worked:
 table(newdatg$A)
 table(dat$A)
