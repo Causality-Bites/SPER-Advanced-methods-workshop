@@ -2,7 +2,7 @@
 # Jessica G Young, HMS, Boston
 # Soren Harnois-Leblanc, HMS, Boston
 
-# Version: 2026/04/22
+# Version: 2026/04/28
 
 
 library(dplyr)
@@ -62,7 +62,7 @@ newdatg = dplyr::select(dat,-Y_homa)
 newdatg = newdatg %>% mutate(A=if_else(A==2, 1, 0)) 
 #check if g+ worked:
 table(newdatg$A)
-
+table(dat$A)
 
 ###Copy 2: the intervention set everyone to exposure level 0.
 newdat0 = dplyr::select(dat,-Y_homa)
@@ -79,10 +79,10 @@ newdat2 = dplyr::select(dat,-Y_homa)
 newdat2 = newdat2 %>% mutate(A=2)
 table(newdat2$A)
 
-###Copy 5: the natural course (no intervention), don't change exposure but have a data set that will predict for all of the nobs.
+###Copy 5: the natural course (no intervention), don't change exposure but have a data set that will predict Y for all of the participants.
 newdatnc = dplyr::select(dat,-Y_homa)
 
-### 3.predict outcome values with model above, conditional on remaining uncensored, having person i's level of W, but now with exposure set to the value under intervention 
+### 3.predict outcome values with model above, conditional on remaining uncensored, having person i's level of L, but now with exposure set to the value under intervention 
 
 homa_g = predict.lm(mod_homa, newdata=newdatg)
 homa_0 = predict.lm(mod_homa, newdata=newdat0)
